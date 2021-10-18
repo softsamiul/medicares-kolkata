@@ -1,0 +1,82 @@
+[
+  {
+    "_id": 1,
+    "name": "Hilda Howard",
+    "dept": "Sr General Physician",
+    "working": "NRS Kolkata",
+    "deg": "MBBS (Calcutta Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 2,
+    "name": "Edgar Owens",
+    "dept": "Sr Cardiologists",
+    "working": "Diamond Harbar, Kolkata",
+    "deg": "MBBS (Murshidabad Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 3,
+    "name": "Steven Porter",
+    "dept": "Colon and Rectal Surgeons",
+    "working": "NRS Kolkata",
+    "deg": "MBBS (North Bengal Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 4,
+    "name": "Lewis Chavez",
+    "dept": "Sr Dermatologists",
+    "working": "Murshidabad Kolkata",
+    "deg": "MBBS (Murshidabad Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 5,
+    "name": "Kent Mckinney",
+    "dept": "Sr Family Physicians",
+    "working": "PG Hospital, Kolkata",
+    "deg": "MBBS (Calcutta Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 6,
+    "name": "Wyatt Green",
+    "dept": "Sr Endocrinologists",
+    "working": "NRS Kolkata",
+    "deg": "MBBS (South Bengal Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 7,
+    "name": "Megan Stevens",
+    "dept": "Sr General Physician",
+    "working": "NRS Kolkata",
+    "deg": "MBBS (Calcutta Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 8,
+    "name": "Gordon Mcdonalid",
+    "dept": "Sr General Physician",
+    "working": "NRS Kolkata",
+    "deg": "MBBS (Calcutta Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 9,
+    "name": "Tracy Lucas",
+    "dept": "Sr Geriatric Medicine",
+    "working": "North Bengal Medical College",
+    "deg": "MBBS (Calcutta Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  },
+  {
+    "_id": 10,
+    "name": "Randall Howell",
+    "dept": "Sr General Physician",
+    "working": "NRS Kolkata",
+    "deg": "MBBS (Calcutta Medical College)",
+    "avatar": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+  }
+]

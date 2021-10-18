@@ -1,0 +1,20 @@
+.slider-wrapper {
+  height: 70vh !important;
+  width: 100%;
+}
+.slider-img {
+  height: 100%;
+}
+/* .caption-wrap::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: skyblue;
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+} */
+/* .caption-wrap {
+  padding: 20px;
+} */
