@@ -16,7 +16,7 @@ const Slider = () => {
                     />
                     </div>
                     <div className="">
-                    <Carousel.Caption className="bg-blue-900 py-18">
+                    <Carousel.Caption className=" py-18">
                     <div className="test"></div>
                     <div className="caption-wrap">
                         <h3 className="text-3xl font-extrabold">First slide label</h3>

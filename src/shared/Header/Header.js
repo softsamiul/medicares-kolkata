@@ -10,21 +10,20 @@ const Header = () => {
     return (
         <div className="bg-blue-900 text-white sticky">
             <Navbar className="w-11/12 mx-auto text-white ">
-                <Navbar.Brand as = {Link} className="text-white font-extrabold text-2xl leading-3" to="home"><i className="fas fa-clinic-medical"></i> MediCares <br/><sub className="font-medium -ml-5">Kolkata</sub></Navbar.Brand>
+                <Navbar.Brand as = {Link} className="text-white font-extrabold text-2xl leading-3" to="home"><i className="fas fa-clinic-medical"></i> MediCares <br/><sub className="font-extralight -ml-9">Kolkata</sub></Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                 <Nav.Link as = {Link} className="text-white" to="/home">Home</Nav.Link>
                 <Nav.Link as = {Link} className="text-white" to="/services">Services</Nav.Link>
                 <Nav.Link as = {Link} className="text-white" to="/experts">Experts</Nav.Link>
-                <Nav.Link as = {Link} className="text-white" to="/register">Register</Nav.Link>
                 <Nav.Link as = {Link} className="text-white" to="/about">About</Nav.Link>
                 <Nav.Link as = {Link} className="text-white" to="/contact">Contact</Nav.Link>
-                {user?.email ? <button className="mr-4" onClick={logOut}>Logout</button> :<Nav.Link as = {Link} to="/register" className="text-white mr-4">Login or Register</Nav.Link>}
+                {user?.email ? <button className="mr-4" onClick={logOut}>Logout</button> :<Nav.Link as = {Link} to="/login" className="text-white mr-4">Login or Register</Nav.Link>}
                   <Navbar.Text className="text-white mr-4">
-                    <a href="#login" className="text-white">{ user.email ? user.displayName : "Guest user"}</a>
+                    <a href="#login" className="text-white">{ user?.email ? user.displayName : "Guest user"}</a>
                   </Navbar.Text>
                   <Navbar.Text className="text-white">
-                    <img className="w-14 h-14 rounded-circle" src={user.email ? user.photoURL : defaultAvatar} alt="" />
+                    <img className="w-14 h-14 rounded-circle" src={user?.email ? user.photoURL : defaultAvatar} alt="" />
                   </Navbar.Text>
                 </Navbar.Collapse>
             </Navbar>

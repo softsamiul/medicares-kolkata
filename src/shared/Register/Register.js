@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
+import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 const Register = () => {
-    const [emailUser, setEmailUser] = useState({});
     const { register, handleSubmit } = useForm();
     // const onSubmit = data => setEmailUser(data);
     const onSubmit = data => {
@@ -11,11 +11,7 @@ const Register = () => {
         handleCreateUser(email, password, fullName)
     };
 
-    // const {email, password, name} = emailUser;
-
     const {handleCreateUser} = useAuth();
-    console.log(emailUser);
-    
     const {handleGoogleSignIn, user} = useFirebase();
     return (
         <div>
@@ -27,6 +23,7 @@ const Register = () => {
                 <input type="submit" />
             </form>
             <div>------------------------------</div>
+            <p>Already Registered? <NavLink to="/login">Login</NavLink></p>
             <div>
                 <button onClick={handleGoogleSignIn}>Google Sign In</button>
             </div>

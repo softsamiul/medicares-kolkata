@@ -24,15 +24,15 @@
     "serviceImg": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
   },
   {
+    "serviceID": 5,
+    "serviceName": "Pediatric Health Services",
+    "serviceDesc": "We offer telemedicine service with a Certified Nurse Practitioner who has spent the majority of her profession treating children with routine health care needs and providing health assessment for children.",
+    "serviceImg": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+  },
+  {
     "serviceID": 6,
     "serviceName": "Experienced Doctor's Consultancy",
     "serviceDesc": "Our team of knowledgeable, skilled and compassionate doctors help you with consultation and treatment for your regular as well as long term health care needs right at the comfort of your home. No travelling; No traffic hassles; No more long waiting hours. We are a call away!! Just remember that house calls aren’t for emergency situations.",
     "img": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
-  },
-  {
-    "serviceID": 7,
-    "serviceName": "Pediatric Health Services",
-    "serviceDesc": "We offer telemedicine service with a Certified Nurse Practitioner who has spent the majority of her profession treating children with routine health care needs and providing health assessment for children.",
-    "serviceImg": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
   }
 ]

@@ -7,7 +7,7 @@ const Doctors = () => {
     return (
         <div className="mt-12 container">
             <h2 className=" text-5xl font-extrabold">Doctors</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-4 gap-4">
                 {
                     doctors.map(doctor => <Doctor key={doctor._id} doctor={doctor}></Doctor>)
                 }

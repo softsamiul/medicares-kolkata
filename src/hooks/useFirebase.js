@@ -17,6 +17,7 @@ const useFirebase = () => {
     const handleCreateUser = (email, password, fullName) => {
         createUserWithEmailAndPassword (auth, email, password, fullName)
         .then(result => {
+            result.user.displayName = fullName;
             setUser(result.user)
             console.log(user);
             
