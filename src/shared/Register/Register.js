@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 const Register = () => {
+    const [emailUser, setEmailUser] = useState({});
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    // const onSubmit = data => setEmailUser(data);
+    const onSubmit = data => {
+        const {email, password, fullName} = data;
+        handleCreateUser(email, password, fullName)
+    };
 
+    // const {email, password, name} = emailUser;
+
+    const {handleCreateUser} = useAuth();
+    console.log(emailUser);
+    
     const {handleGoogleSignIn, user} = useFirebase();
     return (
         <div>
             <h2>Register</h2>
-            <p>{user.name}</p>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input placeholder="Enter name" type="text" {...register("fullName", { required: true})} />
                 <input placeholder="Enter email" type="email" {...register("email", { required: true})}  />

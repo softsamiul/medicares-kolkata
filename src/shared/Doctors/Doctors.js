@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useAuth from '../../hooks/useAuth';
 import Doctor from './Doctor/Doctor';
 
 const Doctors = () => {
-    const [doctors, setDoctors] = useState([]);
-
-    useEffect(()=>{
-        fetch('/doctors.json')
-        .then(res=>res.json())
-        .then(data => setDoctors(data))
-    },[])
-    
+    const {doctors} = useAuth();
     return (
         <div className="mt-12 container">
             <h2 className=" text-5xl font-extrabold">Doctors</h2>

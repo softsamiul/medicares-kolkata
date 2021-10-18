@@ -1,31 +1,32 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import defaultAvatar from '../../assets/images/avatar-default.png';
 import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
     const {user, logOut} = useFirebase();
-    console.log(user);
     
     return (
-        <div>
-            <Navbar>
-              <Container>
-                <Navbar.Brand as = {Link} to="home">MediCares</Navbar.Brand>
+        <div className="bg-blue-900 text-white sticky">
+            <Navbar className="w-11/12 mx-auto text-white ">
+                <Navbar.Brand as = {Link} className="text-white font-extrabold text-2xl leading-3" to="home"><i className="fas fa-clinic-medical"></i> MediCares <br/><sub className="font-medium -ml-5">Kolkata</sub></Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                <Nav.Link as = {Link} to="/home">Home</Nav.Link>
-                <Nav.Link as = {Link} to="/services">Services</Nav.Link>
-                <Nav.Link as = {Link} to="/experts">Experts</Nav.Link>
-                <Nav.Link as = {Link} to="/register">Register</Nav.Link>
-                <Nav.Link as = {Link} to="/about">About</Nav.Link>
-                <Nav.Link as = {Link} to="/contact">Contact</Nav.Link>
-                {user.email ? <button onClick={logOut}>Logout</button> :<Nav.Link as = {Link} to="/contact">Login or Register</Nav.Link>}
-                  <Navbar.Text>
-                    Welcome: <a href="#login">{ user.email ? user.displayName : "Guest"}</a>
+                <Nav.Link as = {Link} className="text-white" to="/home">Home</Nav.Link>
+                <Nav.Link as = {Link} className="text-white" to="/services">Services</Nav.Link>
+                <Nav.Link as = {Link} className="text-white" to="/experts">Experts</Nav.Link>
+                <Nav.Link as = {Link} className="text-white" to="/register">Register</Nav.Link>
+                <Nav.Link as = {Link} className="text-white" to="/about">About</Nav.Link>
+                <Nav.Link as = {Link} className="text-white" to="/contact">Contact</Nav.Link>
+                {user?.email ? <button className="mr-4" onClick={logOut}>Logout</button> :<Nav.Link as = {Link} to="/register" className="text-white mr-4">Login or Register</Nav.Link>}
+                  <Navbar.Text className="text-white mr-4">
+                    <a href="#login" className="text-white">{ user.email ? user.displayName : "Guest user"}</a>
+                  </Navbar.Text>
+                  <Navbar.Text className="text-white">
+                    <img className="w-14 h-14 rounded-circle" src={user.email ? user.photoURL : defaultAvatar} alt="" />
                   </Navbar.Text>
                 </Navbar.Collapse>
-              </Container>
             </Navbar>
         </div>
     );

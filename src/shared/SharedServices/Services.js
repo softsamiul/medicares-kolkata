@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useFirebase from '../../hooks/useFirebase';
 import SingleService from './SingleService/SingleService';
 
 const SharedServices = () => {
-    const [services, setServices] = useState([]);
-
-    useEffect(()=>{
-        fetch('/services.json')
-        .then(res=>res.json())
-        .then(data => setServices(data))
-    },[])
+    const {services} = useFirebase();
     return (
-        <div className="pb-12">
-            <h2 className="text-5xl font-bold mb-6">Services</h2>
+        <div className="py-12">
+            <h2 className="text-5xl font-bold mb-6"><i className="fab fa-servicestack text-blue-900"></i> Services</h2>
             <div className="grid grid-cols-3 gap-4">
                 {
                     services.map(service => <SingleService key={service.serviceID} service={service}></SingleService>)
