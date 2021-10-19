@@ -3,36 +3,36 @@
     "serviceID": 1,
     "serviceName": "Dental Surgery & Treatment",
     "serviceDesc": "Dental surgery is any of a number of medical procedures that involve artificially modifying dentition; in other words, surgery of the teeth, gums and jaw bones.",
-    "serviceImg": "https://avatarairlines.com/wp-content/uploads/2020/05/Male-placeholder.jpeg"
+    "serviceImg": "https://i.ibb.co/YPyk8z7/s-1.jpg"
   },
   {
     "serviceID": 2,
     "serviceName": "Eye Testing and Surgery",
     "serviceDesc": "If you’re going to have eye surgery, such as to remove cataracts, you may be given some medical tests first. For example, you may have an electrocardiogram (EKG) to check the health of your heart, or a complete blood count (CBC) to check that you have a healthy number of red blood cells.",
-    "serviceImg": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+    "serviceImg": "https://i.ibb.co/54DvWmf/service-2.png"
   },
   {
     "serviceID": 3,
     "serviceName": "Birth cares",
     "serviceDesc": "offer more options for low-risk births, often known as family-centered care. These may include private rooms with baths (called birthing suites) where women can labor, deliver, and recover in one place without having to be moved.",
-    "serviceImg": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+    "serviceImg": "https://i.ibb.co/Vmz3HVD/service-3.jpg"
   },
   {
     "serviceID": 4,
     "serviceName": "Blood banks",
     "serviceDesc": "Blood banks allow donors to donate blood and platelets while also storing and sorting blood into components that can be used most effectively by patients.",
-    "serviceImg": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+    "serviceImg": "https://i.ibb.co/TYL0PGy/service-4.jpg"
   },
   {
     "serviceID": 5,
     "serviceName": "Pediatric Health Services",
     "serviceDesc": "We offer telemedicine service with a Certified Nurse Practitioner who has spent the majority of her profession treating children with routine health care needs and providing health assessment for children.",
-    "serviceImg": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+    "serviceImg": "https://i.ibb.co/5FGQgyy/service-5.jpg"
   },
   {
     "serviceID": 6,
     "serviceName": "Experienced Doctor's Consultancy",
     "serviceDesc": "Our team of knowledgeable, skilled and compassionate doctors help you with consultation and treatment for your regular as well as long term health care needs right at the comfort of your home. No travelling; No traffic hassles; No more long waiting hours. We are a call away!! Just remember that house calls aren’t for emergency situations.",
-    "serviceImg": "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png"
+    "serviceImg": "https://i.ibb.co/jbS6B3K/service-6.jpg"
   }
 ]

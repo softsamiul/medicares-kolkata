@@ -3,8 +3,7 @@ import Doctors from '../../shared/Doctors/Doctors';
 
 const Experts = () => {
     return (
-        <div>
-            <h2>Our Experrienced Experts</h2>
+        <div className="mb-20">
             <Doctors></Doctors>
         </div>
     );

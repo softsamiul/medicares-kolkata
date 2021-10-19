@@ -10,20 +10,24 @@ const Home = () => {
     const {doctors} = useAuth();
     return (
         <div >
+            {/* Slider added */}
             <Slider></Slider>
+            {/* home call to action section added */}
             <CallToAction></CallToAction>
             <div  className="w-11/12 mx-auto">
-                
+                {/* home Services section start */}
                 <Services></Services>
-                <div>
-                    <h2 className="text-5xl font-bold mb-12"> <i className="fas fa-user-md text-blue-900"></i> Doctors</h2>
-                    <div className="grid grid-cols-4 gap-4">
+                {/* Doctors section start */}
+                <div className="my-8">
+                    <h2 className="text-5xl font-bold mb-12"> <i className="fas fa-user-md text-blue-900"></i> Our Experienced Doctors</h2>
+                    <div></div>
+                    <div className="grid grid-cols-3 gap-4">
                         {
-                            doctors.slice(0, 4).map(doctor => <Doctor key={doctor._id} doctor={doctor}></Doctor>)
+                            doctors.slice(0, 3).map(doctor => <Doctor key={doctor._id} doctor={doctor}></Doctor>)
                         }
                     </div>
                     <Link to="/experts">
-                        <button>View All Profiles</button>
+                        <button className="bg-blue-900 py-2 px-6 rounded-lg mt-8 text-white">View All Profiles</button>
                     </Link>
                 </div>
             </div>

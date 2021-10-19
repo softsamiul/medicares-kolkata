@@ -10,12 +10,12 @@ const SingleService = ({service}) => {
         history.push(url)
     }
     return (
-        <div className="single-service p-6">
-            <div>
-                <img src={serviceImg} alt="" />
+        <div className="single-service p-6 text-left">
+            <div className="w-3/5 mx-auto h-44">
+                <img className="w-full max-h-40 rounded-lg" src={serviceImg} alt="" />
             </div>
-            <h3 className="text-3xl font-medium">{serviceName}</h3>
-            <p className="text-base py-2">{serviceDesc.slice(0,150)}...</p>
+            <h3 className="text-2xl font-medium">{serviceName}</h3>
+            <p className="text-base py-2 text-gray-700">{serviceDesc.slice(0,150)}...</p>
           
             <button className="py-2 px-6 bg-blue-900 rounded-lg text-white" onClick={handleViewDetails}>View Details</button>
         </div>

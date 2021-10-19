@@ -6,8 +6,8 @@ const SharedServices = () => {
     const {services} = useFirebase();
     return (
         <div className="py-12">
-            <h2 className="text-5xl font-bold mb-6"><i className="fab fa-servicestack text-blue-900"></i> Services</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <h2 className="text-5xl font-bold mb-6"><i className="fab fa-servicestack text-blue-900"></i> We  Are Offering</h2>
+            <div className="grid grid-cols-3 rounded-lg gap-4">
                 {
                     services.map(service => <SingleService key={service.serviceID} service={service}></SingleService>)
                 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import { default as slideImg1, default as slideImg2, default as slideImg3 } from '../../../assets/images/1.jpg';
+import slideImg1 from '../../../assets/images/sl-1.jpg';
+import slideImg2 from '../../../assets/images/sl-3.jpg';
+import slideImg3 from '../../../assets/images/sl-4.jpg';
 import './Slider.css';
 
 const Slider = () => {
@@ -8,9 +10,9 @@ const Slider = () => {
         <div  className="slider-wrapper" style={{height:"100px"}}>
             <Carousel>
                 <Carousel.Item>
-                    <div className="slider-img">
+                    <div className="slider-img" style={{maxHeight:"85vh"}}>
                     <img
-                    className="d-block w-100 h-100 "
+                    className="d-block w-full"
                     src={slideImg1}
                     alt="First slide"
                     />
@@ -26,9 +28,9 @@ const Slider = () => {
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className="slider-img">
+                    <div className="slider-img" style={{maxHeight:"85vh"}}>
                         <img
-                        className="d-block w-100 h-100"
+                        className="d-block w-full"
                         src={slideImg2}
                         alt="Second slide"
                         />
@@ -42,9 +44,9 @@ const Slider = () => {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <div className="slider-img">
+                    <div className="slider-img" style={{maxHeight:"85vh"}}>
                         <img
-                        className="d-block w-100 h-100"
+                        className="d-block w-full"
                         src={slideImg3}
                         alt="Third slide"
                         />
