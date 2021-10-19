@@ -7,11 +7,14 @@ import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
-    const {handleGoogleSignIn, setError} = useAuth();
+    const {handleGoogleSignIn,error, setError} = useAuth();
     const { register, handleSubmit } = useForm();
     const {signInUsingEmailPass} = useAuth();
     const onSubmit = data => {
         const {email, password} = data;
+        if(email == null || password== null){
+            setError('Please enter a valid Value');
+        }
         handleEmailPassLogin(email, password)
         
     };
@@ -42,6 +45,7 @@ const Login = () => {
                 <div className="md:w-3/5 w-full mx-auto">
                     <h2 className="text-3xl font-medium login-header">Login</h2>
                     <p>Doesn't have an account? <NavLink className="text-blue-900 mb-4" to="/register">Sign Up</NavLink></p>
+                    { error &&  <p className="text-red-500">{error}</p> }
                     <form className="" onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-2">
                             {/* <label htmlFor="email">Email</label> */}
@@ -56,7 +60,7 @@ const Login = () => {
                                 <input className="outline-none" placeholder="Enter password" type="password" {...register("password", { required: true})} />
                             </div>
                         </div>
-                        <input type="submit" value="Login" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white"/>
+                        <input type="submit" value="Sign In" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white"/>
                     </form>
                     <p className="text-center">--------- or ---------</p>
                     <div>

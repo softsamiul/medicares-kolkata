@@ -9,9 +9,6 @@ const ServiceDetails = () => {
     const selectedService = services.find(select => select.serviceID == id);
 
     const {serviceImg, serviceName, serviceDesc} = selectedService;
-
-    console.log(selectedService);
-    
     
     return (
         <div className="flex flex-col md:flex-row w-8/12 mx-auto items-center my-12">

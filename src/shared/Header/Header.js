@@ -2,13 +2,11 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import defaultAvatar from '../../assets/images/avatar-default.png';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 import './Header.css';
 
 const Header = () => {
-    const {user, logOut} = useFirebase();
-    console.log(user);
-    
+    const {user, logOut} = useAuth();
     return (
         <div className="bg-blue-900 text-white sticky">
             <Navbar className="w-11/12 mx-auto text-white  " collapseOnSelect expand="lg">
@@ -22,7 +20,7 @@ const Header = () => {
                 <Nav.Link as = {Link} className="text-white" to="/contact">Contact</Nav.Link>
                 {user?.email ? <button className="mr-4" onClick={logOut}>Logout</button> :<Nav.Link as = {Link} to="/login" className="text-white mr-4">Login or Register</Nav.Link>}
                   <Navbar.Text className="text-white mr-4">
-                    <NavLink to={user?.email ? '/profile' : '/login'} className="text-white">{ user?.email ? user.displayName : "Guest user"}</NavLink>
+                    <NavLink to={user?.email || user.displayName ? '/profile' : '/login'} className="text-white">{ user?.email ? user?.displayName : "Guest user"}</NavLink>
                   </Navbar.Text>
                   <Navbar.Text className="text-white ">
                     <NavLink to={user?.email ? '/profile' : '/login'}>
