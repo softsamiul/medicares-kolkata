@@ -8,7 +8,7 @@ const ServiceDetails = () => {
     
     const selectedService = services.find(select => select.serviceID == id);
 
-    const {servceImg, serviceName, serviceDesc} = selectedService;
+    const {serviceImg, serviceName, serviceDesc} = selectedService;
 
     console.log(selectedService);
     
@@ -16,7 +16,7 @@ const ServiceDetails = () => {
     return (
         <div className="flex w-11/12 mx-auto items-center my-12">
             <div className="w-2/5">
-                <img src={servceImg} alt="" />
+                <img src={serviceImg} alt="" />
             </div>
             <div className="w-3/5">
                 <h3 className="text-3xl font-bold mb-2">{serviceName}</h3>

@@ -12,8 +12,8 @@ const Doctor = ({doctor}) => {
         <div>
             {/* Single docttor start */}
             <div className="single-doctor px-10 py-4">
-                <div className="text-center mb-2">
-                    <img className="mx-auto rounded-circle" src={avatar} alt="" />
+                <div className="text-center mb-2 single-doc-img">
+                    <img className="mx-auto rounded" src={avatar} alt="" />
                 </div>
                 <div className="text-left">
                     <h3 className="text-lg">{name}</h3>
