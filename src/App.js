@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Profile from './pages/Profile/Profile';
 import Services from './pages/Services/Services';
 import AuthProvider from './shared/AuthProvider/AuthProvider';
+import DoctorDetails from './shared/Doctors/DoctorDetails/DoctorDetails';
 import Footer from './shared/Footer/Footer';
 import Header from './shared/Header/Header';
 import Login from './shared/Login/Login';
@@ -34,8 +35,11 @@ function App() {
             <PrivateRoute path="/services/:id">
               <ServiceDetails></ServiceDetails>
             </PrivateRoute>
-            <PrivateRoute path="/experts">
+            <PrivateRoute exact path="/experts">
               <Experts></Experts>
+            </PrivateRoute>
+            <PrivateRoute path="/experts/:id">
+              <DoctorDetails></DoctorDetails>
             </PrivateRoute>
             <Route path="/about">
               <About></About>
