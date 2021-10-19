@@ -1,18 +1,31 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../assets/images/google-logo.png';
 import LoginImg from '../../assets/images/login-img.png';
 import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 const Register = () => {
+    const history = useHistory();
+    const location = useLocation();   
+    const redirect_uri = location.state?.from || '/home';
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const {email, password, fullName} = data;
-        handleCreateUser(email, password, fullName)
+        handleRegisterUser(email, password, fullName)
     };
 
-    const {handleCreateUser} = useAuth();
+    const handleRegisterUser = (email, password, fullName) => {
+        handleCreateUser(email, password)
+        .then(result => {
+            result.user.displayName = fullName;
+            setUser(result.user)
+            
+            history.push(redirect_uri)
+        })
+    }
+
+    const {handleCreateUser,setUser} = useAuth();
     const {handleGoogleSignIn, user} = useFirebase();
     return (
         <div className="flex items-center w-11/12 mx-auto">

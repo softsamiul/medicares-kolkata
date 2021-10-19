@@ -12,8 +12,6 @@ const ServiceDetails = () => {
     },[])
     // const selectedService = 
     console.log(services);
-    // console.log(services);
-    // console.log(id);
     
     
     return (

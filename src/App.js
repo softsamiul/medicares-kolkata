@@ -5,6 +5,7 @@ import Contact from './pages/Contact/Contact';
 import Experts from './pages/Experts/Experts';
 import Home from './pages/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
+import Profile from './pages/Profile/Profile';
 import Services from './pages/Services/Services';
 import AuthProvider from './shared/AuthProvider/AuthProvider';
 import Footer from './shared/Footer/Footer';
@@ -47,6 +48,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/profile">
+              <Profile></Profile>
             </Route>
             <Route path="*">
               <NotFound></NotFound>

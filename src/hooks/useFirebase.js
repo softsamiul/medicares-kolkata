@@ -13,24 +13,15 @@ const useFirebase = () => {
     const [error, setError] = useState('');
 
     // create user for email pass regsiter
-    const handleCreateUser = (email, password, fullName) => {
-        createUserWithEmailAndPassword (auth, email, password, fullName)
-        .then(result => {
-            result.user.displayName = fullName;
-            setUser(result.user)
-        }).catch(error => {
-            setError(error.message)
-        })
+    const handleCreateUser = (email, password) => {
+        return createUserWithEmailAndPassword (auth, email, password);
+        
     }
 
     // signin using email and password
     const signInUsingEmailPass = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-        .then(result => {
-            setUser(result.user)
-        }).catch(error => {
-            setError(error.message)
-        })
+        return signInWithEmailAndPassword(auth, email, password);
+        
     }
 
     // providers
@@ -38,13 +29,8 @@ const useFirebase = () => {
 
     // google sign in 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
-        .then(result => {
-            setUser(result.user)
-            console.log(user);
-        }).catch(error => {
-            setError(error.message)
-        })
+        return signInWithPopup(auth, googleProvider);
+        
     }
     // get curent user
     useEffect(()=>{
@@ -83,6 +69,7 @@ const useFirebase = () => {
     },[])
     return {
         user,
+        setUser,
         handleCreateUser,
         signInUsingEmailPass,
         handleGoogleSignIn,

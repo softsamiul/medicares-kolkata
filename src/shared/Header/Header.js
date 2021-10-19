@@ -1,11 +1,12 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import defaultAvatar from '../../assets/images/avatar-default.png';
 import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
     const {user, logOut} = useFirebase();
+    console.log(user);
     
     return (
         <div className="bg-blue-900 text-white sticky">
@@ -20,10 +21,10 @@ const Header = () => {
                 <Nav.Link as = {Link} className="text-white" to="/contact">Contact</Nav.Link>
                 {user?.email ? <button className="mr-4" onClick={logOut}>Logout</button> :<Nav.Link as = {Link} to="/login" className="text-white mr-4">Login or Register</Nav.Link>}
                   <Navbar.Text className="text-white mr-4">
-                    <a href="#login" className="text-white">{ user?.email ? user.displayName : "Guest user"}</a>
+                    <NavLink to={user?.email ? '/profile' : '/login'} className="text-white">{ user?.email ? user.displayName : "Guest user"}</NavLink>
                   </Navbar.Text>
                   <Navbar.Text className="text-white">
-                    <img className="w-14 h-14 rounded-circle" src={user?.email ? user.photoURL : defaultAvatar} alt="" />
+                    <img className="w-14 h-14 rounded-circle" src={user?.photoURL ? user.photoURL : defaultAvatar} alt="" />
                   </Navbar.Text>
                 </Navbar.Collapse>
             </Navbar>
