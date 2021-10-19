@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Doctor from '../../shared/Doctors/Doctor/Doctor';
 import Services from '../Services/Services';
+import Banner from './Banner/Banner';
 import CallToAction from './CallToAction/CallToAction';
-import Slider from './Slider/Slider';
 
 const Home = () => {
     const {doctors} = useAuth();
     return (
         <div >
             {/* Slider added */}
-            <Slider></Slider>
+            <Banner/>
             {/* home call to action section added */}
             <CallToAction></CallToAction>
             <div  className="w-11/12 mx-auto">

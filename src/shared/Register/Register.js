@@ -37,7 +37,7 @@ const Register = () => {
                 <form className="" onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-2">
                         <div className="border border-1-blue p-1">
-                            <i className="fas fa-envelope-open mr-5 ml-2 text-blue-900"></i>
+                            <i className="fas fa-user mr-5 ml-2 text-blue-900"></i>
                             <input placeholder="Enter name" className="outline-none" type="text" {...register("fullName", { required: true})} />
                         </div>
                     </div>

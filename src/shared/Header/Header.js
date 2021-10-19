@@ -3,6 +3,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import { Link, NavLink } from 'react-router-dom';
 import defaultAvatar from '../../assets/images/avatar-default.png';
 import useFirebase from '../../hooks/useFirebase';
+import './Header.css';
 
 const Header = () => {
     const {user, logOut} = useFirebase();
@@ -10,7 +11,7 @@ const Header = () => {
     
     return (
         <div className="bg-blue-900 text-white sticky">
-            <Navbar className="w-11/12 mx-auto text-white ">
+            <Navbar className="w-11/12 mx-auto text-white  " collapseOnSelect expand="lg">
                 <Navbar.Brand as = {Link} className="text-white font-extrabold text-2xl leading-3" to="home"><i className="fas fa-clinic-medical"></i> MediCares <br/><sub className="font-extralight -ml-9">Kolkata</sub></Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
@@ -23,8 +24,8 @@ const Header = () => {
                   <Navbar.Text className="text-white mr-4">
                     <NavLink to={user?.email ? '/profile' : '/login'} className="text-white">{ user?.email ? user.displayName : "Guest user"}</NavLink>
                   </Navbar.Text>
-                  <Navbar.Text className="text-white">
-                    <img className="w-14 h-14 rounded-circle" src={user?.photoURL ? user.photoURL : defaultAvatar} alt="" />
+                  <Navbar.Text className="text-white ">
+                    <img className="w-14 h-14 rounded-circle user-profile-pic" src={user?.photoURL ? user.photoURL : defaultAvatar} alt="" />
                   </Navbar.Text>
                 </Navbar.Collapse>
             </Navbar>
