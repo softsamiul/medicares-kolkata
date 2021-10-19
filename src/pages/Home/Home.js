@@ -19,9 +19,9 @@ const Home = () => {
                 <Services></Services>
                 {/* Doctors section start */}
                 <div className="my-8">
-                    <h2 className="text-5xl font-bold mb-12"> <i className="fas fa-user-md text-blue-900"></i> Our Experienced Doctors</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-12"> <i className="fas fa-user-md text-blue-900"></i> Our Experienced Doctors</h2>
                     <div></div>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {
                             doctors.slice(0, 3).map(doctor => <Doctor key={doctor._id} doctor={doctor}></Doctor>)
                         }

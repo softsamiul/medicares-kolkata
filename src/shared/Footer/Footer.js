@@ -5,8 +5,8 @@ import './Footer.css';
 const Footer = () => {
     return (
         <div className="bg-blue-900 py-4">
-            <div className=" text-white w-11/12 mx-auto"> 
-                <div className="grid grid-cols-4 gap-4">
+            <div className=" text-white w-10/12 md:w-11/12 mx-auto"> 
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
 
                     {/* Footer services navigation */}
                     <div className="text-left">

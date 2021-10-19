@@ -3,7 +3,7 @@ import React from 'react';
 const CallToAction = () => {
     return (
         <div className="text-white">
-            <div className="grid grid-cols-3 ">
+            <div className="grid grid-cols-1 md:grid-cols-3 ">
                 <div className="emergency-case bg-green-900 py-8">
                     <div className="text-4xl font-bold">
                         <i className="fas fa-tint"></i>
