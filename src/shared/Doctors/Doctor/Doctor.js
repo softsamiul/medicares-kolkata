@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 
 const Doctor = ({doctor}) => {
-    const {_id, name, dept, working, deg, avatar} = doctor;
+    const {_id, name, dept, working, avatar} = doctor;
     const history = useHistory();
     const url = `/experts/${_id}`;
     const handleViewProfile = () => {

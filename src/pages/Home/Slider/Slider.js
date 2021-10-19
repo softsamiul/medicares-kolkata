@@ -15,14 +15,14 @@ const Slider = () => {
                     alt="First slide"
                     />
                     </div>
-                    <div className="">
-                    <Carousel.Caption className=" py-18">
-                    <div className="test"></div>
-                    <div className="caption-wrap">
-                        <h3 className="text-3xl font-extrabold">First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </div>
-                    </Carousel.Caption>
+                    <div>
+                        <Carousel.Caption className=" py-18" style={{position: "absolute", top:"50px"}}>
+                        <div className="test"></div>
+                        <div className="caption-wrap">
+                            <h3 className="text-5xl font-extrabold capitalize">Welcome to MediCares!</h3>
+                            
+                        </div>
+                        </Carousel.Caption>
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -34,11 +34,10 @@ const Slider = () => {
                         />
                     </div>
 
-                    <Carousel.Caption className="bg-blue-900 py-18">
+                    <Carousel.Caption className=" py-18" style={{position: "absolute", top:"50px"}}>
                     <div className="test"></div>
                     <div className="caption-wrap">
-                        <h3 className="text-3xl font-extrabold">Second slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3 className="text-5xl font-extrabold capitalize">Special offer! Free Consultation this month only </h3>
                     </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -51,11 +50,10 @@ const Slider = () => {
                         />
                     </div>
 
-                    <Carousel.Caption className="bg-blue-900 py-18">
+                    <Carousel.Caption className=" py-18" style={{position: "absolute", top:"50px"}}>
                     <div className="test"></div>
                     <div className="caption-wrap">
-                        <h3 className="text-3xl font-extrabold">Third slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3 className="text-5xl font-extrabold capitalize">Have an Access to a Health Professional at any time</h3>
                     </div>
                     </Carousel.Caption>
                 </Carousel.Item>

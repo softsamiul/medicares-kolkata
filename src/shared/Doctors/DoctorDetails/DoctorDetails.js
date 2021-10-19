@@ -8,7 +8,7 @@ const DoctorDetails = () => {
     const {doctors} = useAuth();
     const selectedDoctor = doctors.find(selected => selected._id == id);
 
-    const {_id, name, dept, working, deg, avatar} = selectedDoctor;
+    const {name, dept, working, deg, avatar} = selectedDoctor;
     console.log(doctors);
     console.log(selectedDoctor);
     
