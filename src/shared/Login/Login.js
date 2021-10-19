@@ -7,13 +7,16 @@ import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
+    const {handleGoogleSignIn, user} = useAuth();
     const { register, handleSubmit } = useForm();
     const {signInUsingEmailPass} = useAuth();
     const onSubmit = data => {
         const {email, password} = data;
         signInUsingEmailPass(email, password)
     };
-    const {handleGoogleSignIn, user} = useAuth();
+    
+    // const location = useLocation();                                                       
+    // console.log(location.state.from);
     return (
         <div className="flex items-center w-11/12 mx-auto">
             <div className="w-2/5 form-design text-left">
@@ -29,7 +32,6 @@ const Login = () => {
                             </div>
                         </div>
                         <div>
-                            {/* <label htmlFor="password">Password</label> */}
                             <div className="border border-1-blue p-1">
                                 <i className="fas fa-lock mr-5 ml-2 p-1 text-blue-900"></i>
                                 <input className="outline-none" placeholder="Enter password" type="password" {...register("password", { required: true})} />

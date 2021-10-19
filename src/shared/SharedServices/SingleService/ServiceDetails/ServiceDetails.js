@@ -8,21 +8,22 @@ const ServiceDetails = () => {
     useEffect(()=>{
         fetch('/services.json')
         .then(res=>res.json())
-        .then(data => setServices(data))
+        .then(data => {setServices(data.find(select => select.serviceID == id))})
     },[])
-    const selectedService = services.find(select => select.serviceID == id)
-    console.log(selectedService);
+    // const selectedService = 
     console.log(services);
-    console.log(id);
+    // console.log(services);
+    // console.log(id);
+    
     
     return (
         <div className="flex w-11/12 mx-auto items-center">
             <div className="w-2/5">
-                <img src={selectedService.img} alt="" />
+                <img src={services.servceImg} alt="" />
             </div>
             <div className="w-3/5">
-                <h3 className="text-3xl font-bold mb-2">{selectedService.serviceName}</h3>
-                <p className="text-left">{selectedService.serviceDesc}</p>
+                <h3 className="text-3xl font-bold mb-2">{services.serviceName}</h3>
+                <p className="text-left">{services.serviceDesc}</p>
             </div>
         </div>
     );

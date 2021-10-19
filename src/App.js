@@ -10,6 +10,7 @@ import AuthProvider from './shared/AuthProvider/AuthProvider';
 import Footer from './shared/Footer/Footer';
 import Header from './shared/Header/Header';
 import Login from './shared/Login/Login';
+import PrivateRoute from './shared/PrivateRoute/PrivateRoute';
 import Register from './shared/Register/Register';
 import ServiceDetails from './shared/SharedServices/SingleService/ServiceDetails/ServiceDetails';
 
@@ -26,15 +27,15 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <Route exact path="/services">
+            <PrivateRoute exact path="/services">
               <Services></Services>
-            </Route>
-            <Route path="/services/:id">
+            </PrivateRoute>
+            <PrivateRoute path="/services/:id">
               <ServiceDetails></ServiceDetails>
-            </Route>
-            <Route path="/experts">
+            </PrivateRoute>
+            <PrivateRoute path="/experts">
               <Experts></Experts>
-            </Route>
+            </PrivateRoute>
             <Route path="/about">
               <About></About>
             </Route>

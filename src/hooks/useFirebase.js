@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import authInitApp from "../shared/firebase/firebase.init";
 
 authInitApp();
-
 const useFirebase = () => {
     const auth = getAuth();
 
@@ -19,8 +18,8 @@ const useFirebase = () => {
         .then(result => {
             result.user.displayName = fullName;
             setUser(result.user)
-            console.log(user);
-            
+        }).catch(error => {
+            setError(error.message)
         })
     }
 
@@ -29,6 +28,8 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then(result => {
             setUser(result.user)
+        }).catch(error => {
+            setError(error.message)
         })
     }
 
@@ -43,8 +44,6 @@ const useFirebase = () => {
             console.log(user);
         }).catch(error => {
             setError(error.message)
-            console.log(error);
-            
         })
     }
     // get curent user
@@ -91,7 +90,8 @@ const useFirebase = () => {
         doctors,
         services,
         setServices,
-        error
+        error,
+        setError
     }
 }
 
