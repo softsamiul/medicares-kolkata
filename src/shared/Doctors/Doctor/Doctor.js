@@ -10,6 +10,7 @@ const Doctor = ({doctor}) => {
     }
     return (
         <div>
+            {/* Single docttor start */}
             <div className="single-doctor px-10 py-4">
                 <div className="text-center mb-2">
                     <img className="mx-auto rounded-circle" src={avatar} alt="" />
@@ -21,7 +22,6 @@ const Doctor = ({doctor}) => {
                         <p className="text-base text-blue-900 border-l border-gray-700 w-2/4 text-right">{working}</p>
                     </div>
                     <button className="text-base bg-blue-900 px-6 py-1 rounded mt-2 text-white mx-auto text-center inline-block" onClick={handleViewProfile}>View Profile</button>
-                    
                 </div>
             </div>
         </div>

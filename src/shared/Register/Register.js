@@ -28,9 +28,10 @@ const Register = () => {
     const {handleCreateUser,setUser} = useAuth();
     const {handleGoogleSignIn, user} = useFirebase();
     return (
-        <div className="flex items-center w-11/12 mx-auto">
-            <div className="w-2/5 form-design text-left">
-            <div className="w-3/5 mx-auto">
+        <div className="flex flex-col md:flex-row items-center w-11/12 mx-auto">
+            {/* sign uo left start */}
+            <div className="md:w-2/5 w-full form-design text-left">
+            <div className="md:w-3/5 w-full mx-auto">
                 <h2 className="text-3xl font-medium login-header">SIgn Up</h2>
                 <p>Already have an account? <NavLink className="text-blue-900" to="/login">Sign In</NavLink></p>
 
@@ -64,25 +65,12 @@ const Register = () => {
                 </div>
             </div>
             </div>
-            <div className="w-3/5">
+            {/* sign up Right */}
+            <div className="w-3/5 hidden md:block">
                 <div className="w-3/5 mx-auto">
                     <img src={LoginImg} alt="" />
                 </div>
             </div>
-            {/* <h2>Register</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input placeholder="Enter name" type="text" {...register("fullName", { required: true})} />
-                <input placeholder="Enter email" type="email" {...register("email", { required: true})}  />
-                <input placeholder="Enter password" type="password" {...register("password", { required: true})} />
-                <input type="submit" />
-            </form>
-            <p className="text-center">--------- or ---------</p>
-            <div>
-                <div className="flex items-center justify-center border border-1-blue p-1 text-center cursor-pointer" onClick={handleGoogleSignIn}>
-                    <img className="w-5 h-5 text-right" src={googleIcon} alt="" /> 
-                    <p className=" text-left text-lg font-base ml-1.5">Sign In</p>
-                </div>
-            </div> */}
         </div>
     );
 };

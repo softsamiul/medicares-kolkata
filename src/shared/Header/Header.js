@@ -25,7 +25,9 @@ const Header = () => {
                     <NavLink to={user?.email ? '/profile' : '/login'} className="text-white">{ user?.email ? user.displayName : "Guest user"}</NavLink>
                   </Navbar.Text>
                   <Navbar.Text className="text-white ">
+                    <NavLink to={user?.email ? '/profile' : '/login'}>
                     <img className="w-14 h-14 rounded-circle user-profile-pic" src={user?.photoURL ? user.photoURL : defaultAvatar} alt="" />
+                    </NavLink>
                   </Navbar.Text>
                 </Navbar.Collapse>
             </Navbar>

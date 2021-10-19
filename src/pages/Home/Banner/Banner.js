@@ -27,7 +27,7 @@ const Banner = () => {
                 </div>
                 {/* Banner right section */}
                 <div className="md:w-2/4 w-11/12 mt-4 mt-0">
-                    <div className="md:w-3/5 w-full mx-auto">
+                    <div className="md:w-3/5 w-full">
                     <iframe className="iframe-video" width="560" height="315"  src="https://www.youtube.com/embed/DublqkOSBBA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
