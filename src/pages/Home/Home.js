@@ -18,7 +18,7 @@ const Home = () => {
             <div  className="w-11/12 mx-auto">
                 
                 {/* Doctors section start */}
-                <div className="my-8">
+                <div className="my-8 border-b-2 pb-8">
                     <h2 className="text-3xl md:text-5xl font-bold mb-12"> <i className="fas fa-user-md text-blue-900"></i> Our Experienced Doctors</h2>
                     <div></div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
