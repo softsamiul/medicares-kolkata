@@ -7,12 +7,13 @@ import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
-    const {handleGoogleSignIn,error, setError, isLoading, setIsloading} = useAuth();
-    const { register, handleSubmit } = useForm();
+    const {handleGoogleSignIn,error, setError, setIsloading} = useAuth();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const {signInUsingEmailPass} = useAuth();
     const onSubmit = data => {
         const {email, password} = data;
         handleEmailPassLogin(email, password)
+        console.log(errors);
         
     };
     const history = useHistory();
@@ -25,6 +26,7 @@ const Login = () => {
             history.push(redirect_uri);
         }).catch(error => {
             setError(error.message)
+            
         }).finally(() => setIsloading(false))
     }
 
@@ -47,17 +49,21 @@ const Login = () => {
                             {/* <label htmlFor="email">Email</label> */}
                             <div className="border border-1-blue p-1">
                                 <i className="fas fa-envelope-open mr-5 ml-2 text-blue-900"></i>
-                                <input id="email" className="outline-none" placeholder="Enter email" type="email" {...register("email", { required: true})}  />
+                                <input id="email" className="outline-none" placeholder="Enter email" type="email" {...register("email" )} required />
+                                
+                                
                             </div>
                         </div>
                         <div>
                             <div className="border border-1-blue p-1">
                                 <i className="fas fa-lock mr-5 ml-2 p-1 text-blue-900"></i>
-                                <input className="outline-none" placeholder="Enter password" type="password" {...register("password", { required: true})} />
+                                <input className="outline-none" placeholder="Enter password" type="password" {...register("password")} required/>
                             </div>
                         </div>
+                        
                         <input type="submit" value="Sign In" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white btn-hover"/>
                     </form>
+                    <p className="text-red-500 font-medium">{error}</p>
                     <p className="text-center">--------- or ---------</p>
                     <div>
                         <div className="flex items-center justify-center border border-1-blue p-1 text-center cursor-pointer" onClick={handleGoogle}>

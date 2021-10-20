@@ -1,19 +1,16 @@
-import { getAuth } from "firebase/auth";
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from "react-hook-form";
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../assets/images/google-logo.png';
 import LoginImg from '../../assets/images/login-img.png';
 import useAuth from '../../hooks/useAuth';
 const Register = () => {
-    const [regError, setRegError] = useState('');
     const history = useHistory();
-    const auth = getAuth();
     const location = useLocation();   
     const redirect_uri = location.state?.from || '/home';
-    const {handleCreateUser,setUser, setError, error, handleGoogleSignIn,user } = useAuth();
+    const {handleCreateUser, setError, error, handleGoogleSignIn } = useAuth();
     
-    const { register, handleSubmit, formState: { errors }, watch } = useForm();
+    const { register, handleSubmit} = useForm();
     const onSubmit = data => {
         const {email, password, fullName} = data;
         handleRegisterUser(email, password, fullName);
@@ -43,24 +40,24 @@ const Register = () => {
                     <div className="mb-2">
                         <div className="border border-1-blue p-1">
                             <i className="fas fa-user mr-5 ml-2 text-blue-900"></i>
-                            <input placeholder="Enter name" className="outline-none" type="text" {...register("fullName", { required: true})} />
-                            <p>{regError}</p>
+                            <input placeholder="Enter name" className="outline-none" type="text" {...register("fullName")} required/>
                         </div>
                     </div>
                     <div className="mb-2">
                         <div className="border border-1-blue p-1">
                             <i className="fas fa-envelope-open mr-5 ml-2 text-blue-900"></i>
-                            <input placeholder="Enter email" className="outline-none" type="email" {...register("email", { required: true})}  />
+                            <input placeholder="Enter email" className="outline-none" type="email" {...register("email")} required />
                         </div>
                     </div>
                     <div>
                         <div className="border border-1-blue p-1">
                             <i className="fas fa-lock mr-5 ml-2 p-1 text-blue-900"></i>
-                            <input className="outline-none" placeholder="Enter password" type="password" {...register("password", { required: true})} />
+                            <input className="outline-none" placeholder="Enter password" type="password" {...register("password")} required/>
                         </div>
                     </div>
                     <input type="submit" value="Sign Up" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white btn-hover"/>
                 </form>
+                <p className="text-red-500 font-medium">{error}</p>
                 <p className="text-center">--------- or ---------</p>
                     <div>
                         <div className="flex items-center justify-center border border-1-blue p-1 text-center cursor-pointer" onClick={handleGoogleSignIn}>
