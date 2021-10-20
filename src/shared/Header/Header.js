@@ -18,12 +18,13 @@ const Header = () => {
                 <Nav.Link as = {Link} className="text-white" to="/experts">Experts</Nav.Link>
                 <Nav.Link as = {Link} className="text-white" to="/about">About</Nav.Link>
                 <Nav.Link as = {Link} className="text-white" to="/contact">Contact</Nav.Link>
-                {user?.email ? <button className="mr-4" onClick={logOut}>Logout</button> :<Nav.Link as = {Link} to="/login" className="text-white mr-4">Login or Register</Nav.Link>}
+
+                {user?.email || user.displayName ? <Link to="/"> <button className="mr-4" onClick={logOut}>Logout</button> </Link> : <Nav.Link as = {Link} to="/login" className="text-white mr-4">Login or Register</Nav.Link>}
                   <Navbar.Text className="text-white mr-4">
-                    <NavLink to={user?.email || user.displayName ? '/profile' : '/login'} className="text-white">{ user?.email ? user?.displayName : "Guest user"}</NavLink>
+                        <NavLink to={user?.email || user.displayName ? '/profile' : '/login'} className="text-white">{ user.displayName ? user.displayName  : "Guest user"}</NavLink>
                   </Navbar.Text>
                   <Navbar.Text className="text-white ">
-                    <NavLink to={user?.email ? '/profile' : '/login'}>
+                    <NavLink to={user?.email || user.displayName ? '/profile' : '/login'}>
                     <img className="w-14 h-14 rounded-circle user-profile-pic" src={user?.photoURL ? user.photoURL : defaultAvatar} alt="" />
                     </NavLink>
                   </Navbar.Text>

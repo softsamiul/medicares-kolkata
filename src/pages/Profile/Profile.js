@@ -7,7 +7,7 @@ const Profile = () => {
     return (
         <div className="md:w-2/4  w-10/12 mx-auto profile py-18 m-8">
             <div >
-                <img className="md:w-64 md:h-64 w-30 h-30 rounded-circle mx-auto" src={user.email ? user.photoURL : defaultAvatar} alt="" />
+                <img className="md:w-64 md:h-64 w-30 h-30 rounded-circle mx-auto" src={user.email || user.DisplayName ? user.photoURL : defaultAvatar} alt="" />
             </div>
             <table className="mt-8 w-4/5 mx-auto text-left">
                 <tbody>

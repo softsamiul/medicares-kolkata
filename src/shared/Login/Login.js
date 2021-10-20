@@ -45,7 +45,6 @@ const Login = () => {
                 <div className="md:w-3/5 w-full mx-auto">
                     <h2 className="text-3xl font-medium login-header">Login</h2>
                     <p>Doesn't have an account? <NavLink className="text-blue-900 mb-4" to="/register">Sign Up</NavLink></p>
-                    { error &&  <p className="text-red-500">{error}</p> }
                     <form className="" onSubmit={handleSubmit(onSubmit)}>
                         <div className="mb-2">
                             {/* <label htmlFor="email">Email</label> */}

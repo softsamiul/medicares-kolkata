@@ -1,32 +1,59 @@
+import { getAuth, updateEmail, updateProfile } from "firebase/auth";
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../assets/images/google-logo.png';
 import LoginImg from '../../assets/images/login-img.png';
 import useAuth from '../../hooks/useAuth';
-import useFirebase from '../../hooks/useFirebase';
 const Register = () => {
     const history = useHistory();
-    const location = useLocation();   
+    const location = useLocation(); 
+    const auth = getAuth();
+    const {handleCreateUser,setUser, setError, handleGoogleSignIn,user } = useAuth();
+
     const redirect_uri = location.state?.from || '/home';
+    
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const {email, password, fullName} = data;
-        handleRegisterUser(email, password, fullName)
+        handleRegisterUser(email, password, fullName);
+        // update user
+        
+
     };
 
     const handleRegisterUser = (email, password, fullName) => {
         handleCreateUser(email, password)
         .then(result => {
-            result.user.displayName = fullName;
             setUser(result.user)
+
+            updateProfile(auth.currentUser, {
+                displayName: fullName, email: email
+              }).then(() => {
+                // Profile updated!
+                // ...
+              }).catch((error) => {
+                // An error occurred
+                setError(error.message);
+                console.log(error);
+                console.log(user)
+                // ...
+              });
+            
+            //   update email
+            updateEmail(auth.currentUser, email).then(() => {
+                // Email updated!
+                // ...
+              }).catch((error) => {
+                // An error occurred
+                // ...
+              });
             
             history.push(redirect_uri)
+        }).catch(error=>{
+            setError(error.message)
         })
     }
-
-    const {handleCreateUser,setUser} = useAuth();
-    const {handleGoogleSignIn, user} = useFirebase();
     return (
         <div className="flex flex-col md:flex-row items-center w-11/12 mx-auto">
             {/* sign uo left start */}

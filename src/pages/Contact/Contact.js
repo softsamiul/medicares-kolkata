@@ -31,7 +31,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <div className="border border-1-blue p-1">
-                                    <textarea rows="4" cols="50" className="outline-none" type="input" {...register("message", { required: true})}>Message...</textarea>
+                                    <textarea defaultValue="Message" rows="4" cols="50" className="outline-none" type="input" {...register("message", { required: true})}></textarea>
                                 </div>
                             </div>
                             <input type="submit" value="Send" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white"/>
