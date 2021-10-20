@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../assets/images/google-logo.png';
@@ -6,9 +6,10 @@ import LoginImg from '../../assets/images/login-img.png';
 import useAuth from '../../hooks/useAuth';
 const Register = () => {
     const history = useHistory();
-    const location = useLocation();   
+    const location = useLocation();  
+    const [registerError, setRegisterError] = useState(''); 
     const redirect_uri = location.state?.from || '/home';
-    const {handleCreateUser, setError, error, handleGoogleSignIn } = useAuth();
+    const {handleCreateUser, handleGoogleSignIn } = useAuth();
     
     const { register, handleSubmit} = useForm();
     const onSubmit = data => {
@@ -21,10 +22,8 @@ const Register = () => {
         .then(result => { 
             history.push(redirect_uri)
         }).catch(error=>{
-            setError(error.message)
+            setRegisterError(error.message)
         })
-
-
     }
 
     return (
@@ -57,7 +56,7 @@ const Register = () => {
                     </div>
                     <input type="submit" value="Sign Up" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white btn-hover"/>
                 </form>
-                <p className="text-red-500 font-medium">{error}</p>
+                <p className="text-red-500 font-medium">{registerError}</p>
                 <p className="text-center">--------- or ---------</p>
                     <div>
                         <div className="flex items-center justify-center border border-1-blue p-1 text-center cursor-pointer" onClick={handleGoogleSignIn}>

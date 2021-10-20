@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../assets/images/google-logo.png';
@@ -7,7 +7,8 @@ import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
-    const {handleGoogleSignIn,error, setError, setIsloading} = useAuth();
+    const [loginError, setLoginError] = useState('');
+    const {handleGoogleSignIn, setIsloading} = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const {signInUsingEmailPass} = useAuth();
     const onSubmit = data => {
@@ -25,7 +26,7 @@ const Login = () => {
         .then(result => {
             history.push(redirect_uri);
         }).catch(error => {
-            setError(error.message)
+            setLoginError(error.message)
             
         }).finally(() => setIsloading(false))
     }
@@ -35,7 +36,7 @@ const Login = () => {
         .then(result => {
             history.push(redirect_uri);
         }).catch(error => {
-            setError(error.message)
+            setLoginError(error.message)
         }).finally(() => setIsloading(false));
     }
     return (
@@ -63,7 +64,7 @@ const Login = () => {
                         
                         <input type="submit" value="Sign In" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white btn-hover"/>
                     </form>
-                    <p className="text-red-500 font-medium">{error}</p>
+                    <p className="text-red-500 font-medium">{loginError}</p>
                     <p className="text-center">--------- or ---------</p>
                     <div>
                         <div className="flex items-center justify-center border border-1-blue p-1 text-center cursor-pointer" onClick={handleGoogle}>

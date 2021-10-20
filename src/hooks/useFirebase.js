@@ -61,7 +61,6 @@ const useFirebase = () => {
             setUser({})
         }).catch((error) => {
             // An error happened.
-            setError(error.message)
         }).finally(() => setIsloading(false))
     }
 
