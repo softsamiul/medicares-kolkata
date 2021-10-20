@@ -19,7 +19,7 @@ const Header = () => {
                 <Nav.Link as = {Link} className="text-white nav-item" to="/about">About</Nav.Link>
                 <Nav.Link as = {Link} className="text-white nav-item" to="/contact">Contact</Nav.Link>
 
-                {user?.email || user.displayName ? <Link to="/"> <button className="mr-4 nav-item" onClick={logOut}>Logout</button> </Link> : <Nav.Link as = {Link} to="/register" className="nav-item text-white mr-4">Login or Register</Nav.Link>}
+                {user?.email || user.displayName ? <Link to="/"> <button className="mr-4 py-2 px-2 logout nav-item" onClick={logOut}>Logout</button> </Link> : <Nav.Link as = {Link} to="/register" className="nav-item text-white py-2 mr-4">Login or Register</Nav.Link>}
                   <Navbar.Text className="text-white mr-4 nav-item">
                         <NavLink to={user?.email || user.displayName ? '/profile' : '/login'} className="text-white px-2 capitalize">
                           
