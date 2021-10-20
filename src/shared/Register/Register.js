@@ -10,7 +10,7 @@ const Register = () => {
     const history = useHistory();
     const auth = getAuth();
     const location = useLocation();   
-    const redirect_uri = location.state?.from || '/login';
+    const redirect_uri = location.state?.from || '/home';
     const {handleCreateUser,setUser, setError, error, handleGoogleSignIn,user } = useAuth();
     
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
