@@ -1,25 +1,23 @@
 import { getAuth, updateEmail, updateProfile } from "firebase/auth";
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { NavLink, useHistory, useLocation } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import googleIcon from '../../assets/images/google-logo.png';
 import LoginImg from '../../assets/images/login-img.png';
 import useAuth from '../../hooks/useAuth';
 const Register = () => {
     const history = useHistory();
-    const location = useLocation(); 
+    // const location = useLocation(); 
     const auth = getAuth();
     const {handleCreateUser,setUser, setError, handleGoogleSignIn,user } = useAuth();
 
-    const redirect_uri = location.state?.from || '/home';
+    // const redirect_uri = location.state?.from || '/home';
     
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         const {email, password, fullName} = data;
         handleRegisterUser(email, password, fullName);
-        // update user
-        
-
+    
     };
 
     const handleRegisterUser = (email, password, fullName) => {
@@ -49,7 +47,7 @@ const Register = () => {
                 // ...
               });
             
-            history.push(redirect_uri)
+            history.push('/login')
         }).catch(error=>{
             setError(error.message)
         })
