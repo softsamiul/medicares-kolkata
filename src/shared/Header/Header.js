@@ -23,7 +23,8 @@ const Header = () => {
                   <Navbar.Text className="text-white mr-4">
                         <NavLink to={user?.email || user.displayName ? '/profile' : '/login'} className="text-white">
                           
-                            { user.displayName ? user.displayName  : "Guest user"}
+                            {/* { user.displayName ? user.displayName  : "Guest user"} */}
+                            {user.email ?  user.displayName ? user.displayName : user.email.substring(0, user.email.lastIndexOf("@")) : "Guest user"}
 
                         </NavLink>
                   </Navbar.Text>

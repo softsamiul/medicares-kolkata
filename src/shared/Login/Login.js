@@ -26,6 +26,7 @@ const Login = () => {
         handleGoogleSignIn()
         .then(result => {
             history.push(redirect_uri);
+            
         }).catch(error => {
             setError(error.message)
         })

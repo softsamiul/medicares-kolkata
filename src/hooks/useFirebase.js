@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateEmail } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import authInitApp from "../shared/firebase/firebase.init";
@@ -18,10 +18,7 @@ const useFirebase = () => {
         return createUserWithEmailAndPassword (auth, email, password);
         
     }
-
-    // Update users profile
         
-
     // signin using email and password
     const signInUsingEmailPass = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password);
@@ -41,6 +38,7 @@ const useFirebase = () => {
         onAuthStateChanged(auth, user => {
             if(user){
                 setUser(user)
+
             }else{ 
                 setUser({})    
             }
@@ -84,6 +82,8 @@ const useFirebase = () => {
         doctors,
         services,
         setServices,
+        updateEmail,
+        auth,
         error,
         setError
     }

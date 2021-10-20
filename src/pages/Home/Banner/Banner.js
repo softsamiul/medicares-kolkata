@@ -22,8 +22,9 @@ const Banner = () => {
                             <i className="fas fa-arrow-alt-circle-right mr-2 text-blue-900"></i>
                             <p className="text-lg text-gray-700">The care you need. The compassion you deserve.</p>
                         </div>
+                        
                     </div>
-
+                    <button className="py-2 px-6 bg-blue-900 rounded text-white text-left mt-3 font-bold text-base">Explore Now</button>
                 </div>
                 {/* Banner right section */}
                 <div className="md:w-2/4 w-11/12 mt-4 mt-0">

@@ -13,7 +13,7 @@ const Profile = () => {
                 <tbody>
                     <tr className=" border-b-2 border-gray">
                         <td>Name:</td>
-                        <td>{user.displayName}</td>
+                        <td></td>
                     </tr>
                     <tr className=" border-b-2 border-gray">
                         <td>Email:</td>
