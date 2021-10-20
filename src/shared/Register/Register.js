@@ -1,4 +1,4 @@
-import { getAuth, updateEmail, updateProfile } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
@@ -10,70 +10,26 @@ const Register = () => {
     const history = useHistory();
     const auth = getAuth();
     const location = useLocation();   
-    const redirect_uri = location.state?.from || '/home';
+    const redirect_uri = location.state?.from || '/login';
     const {handleCreateUser,setUser, setError, error, handleGoogleSignIn,user } = useAuth();
     
     const { register, handleSubmit, formState: { errors }, watch } = useForm();
     const onSubmit = data => {
         const {email, password, fullName} = data;
         handleRegisterUser(email, password, fullName);
-        console.log(data);
     };
-    
-    
+     
     const handleRegisterUser = (email, password, fullName) => {
         handleCreateUser(email, password)
-        .then(result => {
-            setUser(result.user)
-
-            updateProfile(auth.currentUser, {
-                displayName: fullName, email: email
-              }).then(() => {
-                // Profile updated!
-                // ...
-              }).catch((error) => {
-                // An error occurred
-                setError(error.message);
-                console.log(error);
-                console.log(user)
-                // ...
-              });
-            
-            //   update email
-            updateEmail(auth.currentUser, email).then(() => {
-                // Email updated!
-                // ...
-              }).catch((error) => {
-                // An error occurred
-                // ...
-              });
-            
-            history.push(redirect_uri
-                )
+        .then(result => { 
+            history.push(redirect_uri)
         }).catch(error=>{
             setError(error.message)
         })
-        if(fullName == null || user.displayName == null){
-            setError("Please enter name");
-            console.log(fullName);
-            
-            if(email == null) {
-                setError("Please enter email");
-                console.log(email);
-                
-                if(password == null){
-                    setError("Please enter password");
-                    console.log(password);
-                    
-                }
-            }
-        }
 
-        
-        
+
     }
 
-    
     return (
         <div className="flex flex-col md:flex-row items-center w-11/12 mx-auto">
             {/* sign uo left start */}

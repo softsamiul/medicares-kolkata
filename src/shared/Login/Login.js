@@ -7,14 +7,11 @@ import useAuth from '../../hooks/useAuth';
 import './Login.css';
 
 const Login = () => {
-    const {handleGoogleSignIn,error, setError} = useAuth();
+    const {handleGoogleSignIn,error, setError, isLoading, setIsloading} = useAuth();
     const { register, handleSubmit } = useForm();
     const {signInUsingEmailPass} = useAuth();
     const onSubmit = data => {
         const {email, password} = data;
-        if(email == null || password== null){
-            setError('Please enter a valid Value');
-        }
         handleEmailPassLogin(email, password)
         
     };
@@ -26,10 +23,9 @@ const Login = () => {
         handleGoogleSignIn()
         .then(result => {
             history.push(redirect_uri);
-            
         }).catch(error => {
             setError(error.message)
-        })
+        }).finally(() => setIsloading(false))
     }
 
     const handleEmailPassLogin = (email, password) => {
@@ -38,7 +34,7 @@ const Login = () => {
             history.push(redirect_uri);
         }).catch(error => {
             setError(error.message)
-        })
+        }).finally(() => setIsloading(false));
     }
     return (
         <div className="flex flex-col md:flex-row items-center w-11/12 mx-auto">

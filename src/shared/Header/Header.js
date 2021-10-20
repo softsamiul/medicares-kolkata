@@ -21,14 +21,14 @@ const Header = () => {
 
                 {user?.email || user.displayName ? <Link to="/"> <button className="mr-4 nav-item" onClick={logOut}>Logout</button> </Link> : <Nav.Link as = {Link} to="/register" className="nav-item text-white mr-4">Login or Register</Nav.Link>}
                   <Navbar.Text className="text-white mr-4 nav-item">
-                        <NavLink to={user?.email || user.displayName ? '/profile' : '/login'} className="text-white px-2">
+                        <NavLink to={user?.email || user.displayName ? '/profile' : '/login'} className="text-white px-2 capitalize">
                           
                             {/* { user.displayName ? user.displayName  : "Guest user"} */}
                             {user.email ?  user.displayName ? user.displayName : user.email.substring(0, user.email.lastIndexOf("@")) : "Guest user"}
 
                         </NavLink>
                   </Navbar.Text>
-                  <Navbar.Text className="text-white nav-item">
+                  <Navbar.Text className="text-white">
                     <NavLink to={user?.email || user.displayName ? '/profile' : '/login'}>
                     <img className="w-14 h-14 rounded-circle user-profile-pic" src={user?.photoURL ? user.photoURL : defaultAvatar} alt="" />
                     </NavLink>
