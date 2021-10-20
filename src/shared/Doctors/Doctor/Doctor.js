@@ -13,15 +13,15 @@ const Doctor = ({doctor}) => {
             {/* Single docttor start */}
             <div className="single-doctor px-10 py-4">
                 <div className="text-center mb-2 single-doc-img">
-                    <img className="mx-auto rounded" src={avatar} alt="" />
+                    <img className="mx-auto rounded img-hover" style={{height:"250px"}} src={avatar} alt="" />
                 </div>
-                <div className="text-left">
+                <div className="text-left" style={{height:"117px"}}>
                     <h3 className="text-lg">{name}</h3>
                     <div className="flex items-center justify-between">
                         <h6 className="text-base text-blue-900 w-2/4">{dept}</h6>
                         <p className="text-base text-blue-900 border-l border-gray-700 w-2/4 text-right">{working}</p>
                     </div>
-                    <button className="text-base bg-blue-900 px-6 py-1 rounded mt-2 text-white mx-auto text-center inline-block" onClick={handleViewProfile}>View Profile</button>
+                    <button className="text-base bg-blue-900 px-6 py-1 rounded mt-2 text-white mx-auto text-center inline-block btn-hover" onClick={handleViewProfile}>View Profile</button>
                 </div>
             </div>
         </div>

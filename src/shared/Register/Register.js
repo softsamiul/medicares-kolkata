@@ -1,24 +1,26 @@
 import { getAuth, updateEmail, updateProfile } from "firebase/auth";
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../assets/images/google-logo.png';
 import LoginImg from '../../assets/images/login-img.png';
 import useAuth from '../../hooks/useAuth';
 const Register = () => {
+    const [regError, setRegError] = useState('');
     const history = useHistory();
     const auth = getAuth();
     const location = useLocation();   
     const redirect_uri = location.state?.from || '/home';
-    const {handleCreateUser,setUser, setError, handleGoogleSignIn,user } = useAuth();
+    const {handleCreateUser,setUser, setError, error, handleGoogleSignIn,user } = useAuth();
     
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors }, watch } = useForm();
     const onSubmit = data => {
         const {email, password, fullName} = data;
         handleRegisterUser(email, password, fullName);
-    
+        console.log(data);
     };
-
+    
+    
     const handleRegisterUser = (email, password, fullName) => {
         handleCreateUser(email, password)
         .then(result => {
@@ -46,11 +48,32 @@ const Register = () => {
                 // ...
               });
             
-            history.push(redirect_uri)
+            history.push(redirect_uri
+                )
         }).catch(error=>{
             setError(error.message)
         })
+        if(fullName == null || user.displayName == null){
+            setError("Please enter name");
+            console.log(fullName);
+            
+            if(email == null) {
+                setError("Please enter email");
+                console.log(email);
+                
+                if(password == null){
+                    setError("Please enter password");
+                    console.log(password);
+                    
+                }
+            }
+        }
+
+        
+        
     }
+
+    
     return (
         <div className="flex flex-col md:flex-row items-center w-11/12 mx-auto">
             {/* sign uo left start */}
@@ -60,10 +83,12 @@ const Register = () => {
                 <p>Already have an account? <NavLink className="text-blue-900" to="/login">Sign In</NavLink></p>
 
                 <form className="" onSubmit={handleSubmit(onSubmit)}>
+                    
                     <div className="mb-2">
                         <div className="border border-1-blue p-1">
                             <i className="fas fa-user mr-5 ml-2 text-blue-900"></i>
                             <input placeholder="Enter name" className="outline-none" type="text" {...register("fullName", { required: true})} />
+                            <p>{regError}</p>
                         </div>
                     </div>
                     <div className="mb-2">
@@ -78,7 +103,7 @@ const Register = () => {
                             <input className="outline-none" placeholder="Enter password" type="password" {...register("password", { required: true})} />
                         </div>
                     </div>
-                    <input type="submit" value="Sign Up" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white"/>
+                    <input type="submit" value="Sign Up" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white btn-hover"/>
                 </form>
                 <p className="text-center">--------- or ---------</p>
                     <div>

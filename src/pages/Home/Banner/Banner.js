@@ -5,6 +5,7 @@ import './Banner.css';
 const Banner = () => {
     return (
         <div  className="banner-wrapper w-11/12 mx-auto" style={{margin:"50px 0"}}>
+            {/* Banner start */}
             <div className="flex flex-col md:flex-row  items-center">
                 {/* banner left */}
                 <div className="md:w-2/4 w-11/12">
@@ -24,7 +25,7 @@ const Banner = () => {
                         </div>
                         
                     </div>
-                    <button className="py-2 px-6 bg-blue-900 rounded text-white text-left mt-3 font-bold text-base">Explore Now</button>
+                    <button className="py-2 px-6 bg-blue-900 rounded text-white text-left mt-3 font-bold text-base btn-hover">Explore Now</button>
                 </div>
                 {/* Banner right section */}
                 <div className="md:w-2/4 w-11/12 mt-4 mt-0">

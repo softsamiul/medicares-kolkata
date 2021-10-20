@@ -7,3 +7,9 @@
 .single-doc-img {
   min-height: 290px;
 }
+.img-hover {
+  transition: all ease-in 0.5s;
+}
+.img-hover:hover {
+  transform: scale(1.1);
+}

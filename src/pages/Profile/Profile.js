@@ -13,7 +13,9 @@ const Profile = () => {
                 <tbody>
                     <tr className=" border-b-2 border-gray">
                         <td>Name:</td>
-                        <td></td>
+                        <td>
+                        { user.displayName ? user.displayName : user.email.substring(0, user.email.lastIndexOf("@"))}
+                        </td>
                     </tr>
                     <tr className=" border-b-2 border-gray">
                         <td>Email:</td>

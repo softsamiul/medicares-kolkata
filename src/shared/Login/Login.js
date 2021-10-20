@@ -60,7 +60,7 @@ const Login = () => {
                                 <input className="outline-none" placeholder="Enter password" type="password" {...register("password", { required: true})} />
                             </div>
                         </div>
-                        <input type="submit" value="Sign In" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white"/>
+                        <input type="submit" value="Sign In" className="block w-full font-medium py-1 my-2 px-12 bg-blue-900 text-white btn-hover"/>
                     </form>
                     <p className="text-center">--------- or ---------</p>
                     <div>
