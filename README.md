@@ -1,6 +1,4 @@
-### Assignment - 10
-
-#### MediCares (Kolkata)
+## MediCares (Kolkata)
 
 ##### Project live link: https://medi-cares.web.app/
 
@@ -17,9 +15,10 @@
 - `React Hook Form`
 - `React Bootstrap`
 - `TailWind CSS`
+- `Firebase`
 
 #### Features:
 
 - `Anyone can check our website to get therir desired health services`
-- `Here I added user account create & login system`
-- `I also added google auth system`
+- `Implemented user account create & login system`
+- `Worked on Firebase Authentication`
